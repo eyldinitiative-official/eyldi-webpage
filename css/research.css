@@ -1,0 +1,246 @@
+/* ==========================================================================
+   EYLDI — Research Hub styles (extends styles.css)
+   ========================================================================== */
+
+.hub-hero {
+  background: linear-gradient(180deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--white);
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+.hub-hero h1 { color: var(--white); }
+.hub-hero .lede { color: rgba(255,255,255,0.88); }
+.hub-hero .section-eyebrow { color: rgba(255,255,255,0.9); }
+
+.hub-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: var(--space-md);
+}
+.hub-jump a {
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+}
+.hub-jump a:hover { background: rgba(255,255,255,0.25); }
+
+/* ---------------- Competency Explorer ---------------- */
+.comp-cluster-label {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-purple-text);
+  margin: var(--space-md) 0 0.6rem;
+}
+.comp-tier {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+.comp-tier--single { grid-template-columns: minmax(220px, 340px); justify-content: center; }
+.comp-tier--triple { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) {
+  .comp-tier--triple { grid-template-columns: 1fr; }
+  .comp-tier--single { grid-template-columns: 1fr; }
+}
+
+.comp-tile {
+  width: 100%;
+  text-align: left;
+  border: 2px solid var(--border-soft);
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+  font-family: var(--font-sans);
+}
+.comp-tile:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.comp-tile.is-active { border-color: var(--mauve); background: var(--mauve-tint); }
+.comp-tile .comp-abbr {
+  display: inline-block;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.6rem;
+}
+.comp-tile[data-comp="go"] .comp-abbr { background: var(--teal); }
+.comp-tile[data-comp="uo"] .comp-abbr,
+.comp-tile[data-comp="br"] .comp-abbr,
+.comp-tile[data-comp="hi"] .comp-abbr { background: var(--mauve); }
+.comp-tile[data-comp="eo"] .comp-abbr { background: var(--slate-purple); }
+.comp-tile .comp-name { font-weight: 700; color: var(--teal); display: block; }
+.comp-tile .comp-hint { font-size: 0.85rem; color: var(--ink-soft); }
+
+.comp-detail {
+  margin-top: var(--space-md);
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+.comp-detail .comp-detail-placeholder {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: var(--space-lg) 0;
+}
+.comp-detail-head { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); flex-wrap: wrap; }
+.comp-detail-head h3 { margin: 0; color: var(--teal); }
+.comp-practice-list { padding-left: 1.1em; }
+.comp-practice-list li { margin-bottom: 0.4rem; }
+.comp-detail blockquote {
+  background: var(--cream);
+  border-left: 4px solid var(--mauve);
+  padding: var(--space-md);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--teal);
+  margin: var(--space-md) 0 0.4rem;
+}
+.comp-detail blockquote cite { display: block; font-style: normal; font-size: 0.85rem; color: var(--slate-purple-text); margin-top: 0.5rem; font-weight: 600; }
+
+/* ---------------- Stats / data viz ---------------- */
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+@media (max-width: 900px) { .viz-grid { grid-template-columns: 1fr; } }
+
+.donut-card { text-align: center; }
+.donut-wrap { position: relative; width: 150px; height: 150px; margin: 0 auto var(--space-sm); }
+.donut-wrap svg { transform: rotate(-90deg); }
+.donut-value {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-weight: 700; font-size: 1.5rem; color: var(--teal);
+}
+.donut-label { font-size: 0.9rem; color: var(--ink-soft); }
+
+.bar-compare { margin-bottom: 0.9rem; }
+.bar-compare .bar-label { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.25rem; font-weight: 600; }
+.bar-compare .bar-track { background: var(--border-soft); border-radius: 999px; height: 12px; overflow: hidden; }
+.bar-compare .bar-fill { height: 100%; border-radius: 999px; background: var(--teal); width: 0%; transition: width 900ms ease; }
+.bar-compare.mauve .bar-fill { background: var(--mauve); }
+
+.era-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+@media (max-width: 700px) { .era-compare { grid-template-columns: 1fr; } }
+.era-card {
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+.era-card--2021 { background: var(--mint-tint); border: 1px solid var(--mint); }
+.era-card--2025 { background: var(--mauve-tint); border: 1px solid var(--mauve); }
+.era-card ul { padding-left: 1.1em; margin: 0 0 var(--space-sm); }
+.era-card li { margin-bottom: 0.35rem; }
+.era-card .btn { margin-top: 0.4rem; }
+
+/* ---------------- Challenges accordion ---------------- */
+.accordion-item {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  background: var(--white);
+  border: none;
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--teal);
+}
+.accordion-trigger .acc-icon { font-size: 1.3rem; }
+.accordion-trigger .acc-plus {
+  margin-left: auto;
+  font-size: 1.3rem;
+  color: var(--mauve);
+  transition: transform var(--transition);
+}
+.accordion-item.is-open .acc-plus { transform: rotate(45deg); }
+.accordion-item.is-open .accordion-trigger { background: var(--mint-tint); }
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease;
+  background: var(--white);
+}
+.accordion-panel-inner { padding: 0 var(--space-md) var(--space-md); color: var(--ink-soft); }
+.accordion-panel-inner blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--teal);
+  border-left: 3px solid var(--mint);
+  padding-left: 1rem;
+  margin: 0.7rem 0 0;
+}
+.accordion-stat { display: inline-block; background: var(--mauve-tint); color: var(--mauve-text); font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin-bottom: 0.5rem; }
+
+/* ---------------- Quote bank ---------------- */
+.quote-bank-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+@media (max-width: 760px) { .quote-bank-grid { grid-template-columns: 1fr; } }
+.quote-card {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  transition: opacity var(--transition), transform var(--transition);
+}
+.quote-card blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--teal);
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+.quote-card .quote-tag { font-size: 0.78rem; color: var(--mauve-text); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ---------------- Methodology callout ---------------- */
+.method-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+.method-chip {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
