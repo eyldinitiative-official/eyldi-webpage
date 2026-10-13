@@ -11,27 +11,6 @@
 .hub-hero .lede { color: rgba(255,255,255,0.88); }
 .hub-hero .section-eyebrow { color: rgba(255,255,255,0.9); }
 
-.hub-jump {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: var(--space-md);
-}
-.hub-jump a {
-  background: rgba(255,255,255,0.12);
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.35);
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  min-height: 48px;
-  display: inline-flex;
-  align-items: center;
-}
-.hub-jump a:hover { background: rgba(255,255,255,0.25); }
-
 /* ---------------- Competency Explorer ---------------- */
 .comp-cluster-label {
   text-align: center;
@@ -122,6 +101,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
+.viz-grid--2 { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 900px) { .viz-grid { grid-template-columns: 1fr; } }
 
 .donut-card { text-align: center; }
@@ -151,7 +131,6 @@
   padding: var(--space-md);
 }
 .era-card--2021 { background: var(--mint-tint); border: 1px solid var(--mint); }
-.era-card--2025 { background: var(--mauve-tint); border: 1px solid var(--mauve); }
 .era-card ul { padding-left: 1.1em; margin: 0 0 var(--space-sm); }
 .era-card li { margin-bottom: 0.35rem; }
 .era-card .btn { margin-top: 0.4rem; }

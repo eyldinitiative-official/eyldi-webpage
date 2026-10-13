@@ -1,5 +1,5 @@
 // EYLDI — Research Hub interactivity
-// Competency explorer, data viz animation, self-assessment, timeline, accordion, quote bank
+// Competency explorer, data viz animation, challenges accordion, quote bank
 
 document.addEventListener('DOMContentLoaded', () => {
   initCompetencyExplorer();
@@ -73,7 +73,7 @@ const compData = {
   eo: {
     name: 'Enabling Others',
     tag: 'Most predictive of impact',
-    tagClass: 'tag--mauve',
+    tagClass: 'tag--gold',
     definition: 'A genuine intent to help others grow and achieve their goals — not by teaching or giving guidance, but by creating the conditions for them to learn and develop on their own.',
     practice: [
       'Believes others have the potential to be leaders',
@@ -112,6 +112,7 @@ function initCompetencyExplorer() {
           ${data.practice.map(p => `<li>${p}</li>`).join('')}
         </ul>
         <blockquote>${data.quote}<cite>${data.cite}</cite></blockquote>
+        <div class="video-placeholder"><span class="vp-icon" aria-hidden="true">🎥</span> Video placeholder — a short clip of ${data.name} in practice will go here.</div>
       `;
       detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
@@ -156,6 +157,7 @@ const challengesData = [
     icon: '⚖️',
     title: 'Figuring out the role of Leader-Developer',
     stat: '70% described uncertainty',
+    related: ['GO', 'EO'],
     body: 'Many Leader-Developers wrestled with how directive to be, how much structure to offer, and when to listen versus guide — without a clear playbook, figuring out the role in real time.',
     quote: '“I struggled with, as a coach, that I’m not supposed to be giving her answers... It was challenging because of my own uncertainty about how to be helpful.”'
   },
@@ -163,6 +165,7 @@ const challengesData = [
     icon: '💔',
     title: 'Emotional and interpersonal strain',
     stat: 'More than half described this',
+    related: ['BR', 'UO'],
     body: 'Supporting someone over time — especially when progress is slow or expectations don’t align — takes a toll. Leader-Developers described managing disappointment, tension, and the need to repair relationships.',
     quote: '“It was hard trying to juggle being a director, a coach, a trainer... All of those different roles with each site and each educator.”'
   },
@@ -170,6 +173,7 @@ const challengesData = [
     icon: '🗣️',
     title: 'Bias, perceptions, and honest communication',
     stat: 'About half described this',
+    related: ['HI', 'UO'],
     body: 'Differences in gender, age, and social expectations shaped how feedback was interpreted, how authority was perceived, and how open leaders could be.',
     quote: '“I think it had something to do with him being a man and me being a woman... He may have seen me as a mother figure trying to boss him around.”'
   },
@@ -177,6 +181,7 @@ const challengesData = [
     icon: '📋',
     title: 'Managing performance issues',
     stat: 'Nearly 70% faced this tension',
+    related: ['GO', 'EO'],
     body: 'Leaders often had to shift between coach, supporter, and evaluator — holding someone accountable while still trying to help them grow.',
     quote: '“I was supporting a leader in her development but it became clear that her work wasn’t getting done. I had to involve HR as it was serious.”'
   }
@@ -198,6 +203,7 @@ function initChallengesAccordion() {
           <span class="accordion-stat">${c.stat}</span>
           <p>${c.body}</p>
           <blockquote>${c.quote}</blockquote>
+          <p style="margin-top:0.6rem;">${c.related.map(r => `<span class="tag">Relates to: ${r}</span>`).join('')}</p>
         </div>
       </div>
     </div>
@@ -230,11 +236,9 @@ function initChallengesAccordion() {
    ============================================================ */
 const quoteBank = [
   { tag: 'Motivation', text: '“Developing better leaders isn’t a side project or a luxury; it’s the work that makes all the other work possible.”', cite: '— Pomerantz, 2025' },
-  { tag: '2021 Origins', text: '“It matters that we have leaders from the community that are going to change and make things better for that community... it’s an equity gap. Not an achievement gap, an ability gap.”', cite: '— ECE State Nonprofit Leader, 2021 study' },
-  { tag: '2021 Origins', text: '“There’s no coaching that goes along with figuring out what to do next. How do I get ahead? How do I become a better teacher?... That just doesn’t exist in the sector right now.”', cite: '— Consultant and Trainer, 2021 study' },
   { tag: 'Guiding Others', text: '“You are a dancer. You know what to do on stage. So go out there and use your hands if you need to, but tell them what you want them to hear.”', cite: '— Joan, coaching Sarah before her first public presentation' },
   { tag: 'Enabling Others', text: '“I considered myself as holding space so she could hear herself... I strongly believe in the sound of silence, which allows people to share what’s coming up for them.”', cite: '— Margaret, describing her work with Carol' },
-  { tag: 'Identity', text: '“As a Black woman leading an organization, I am always going to look for opportunities for other young Black women to be in similar roles as me... to have an opportunity to be at tables that we usually are not at.”', cite: '— A Leader-Developer, 2025/26 study' }
+  { tag: 'Identity', text: '“As a Black woman leading an organization, I am always going to look for opportunities for other young Black women to be in similar roles as me... to have an opportunity to be at tables that we usually are not at.”', cite: '— A Leader-Developer, 2024 study' }
 ];
 
 function initQuoteBank() {

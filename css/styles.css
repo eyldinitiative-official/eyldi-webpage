@@ -5,19 +5,23 @@
 
 :root {
   /* Brand colors — source of truth per creative brief */
-  --teal: #006E79;         /* Deep teal — headings, primary links */
+  --teal: #1a8a7a;         /* Deep teal — headings, primary links */
   --mint: #6BC8C0;         /* Mint/seafoam — accents, tags, logo mark */
   --mauve: #9F79AC;        /* Mauve/plum — secondary headings, pull-quote marks */
   --slate-purple: #837895; /* Muted slate-purple — alternate heading tone */
+  --coral: #E2693F;        /* Coral — Join the Conversation / community accents */
+  --gold: #C98A2E;         /* Gold — video & media-coming-soon accents */
   --cream: #F2E9D2;        /* Cream/ivory — pull-quote bg, warm breaks */
   --ink: #221F1F;          /* Near-black — body copy */
   --white: #FFFFFF;
 
   /* Derived tones for depth without leaving the palette */
-  --teal-dark: #00565f;
-  --teal-tint: #e3f2f1;
+  --teal-dark: #136b5e;
+  --teal-tint: #e4f3f0;
   --mint-tint: #eaf8f6;
   --mauve-tint: #f3edf5;
+  --coral-tint: #fbe9e1;
+  --gold-tint: #f8ecd3;
   --cream-deep: #ead9ad;
   --ink-soft: #4a4646;
   --border-soft: rgba(34, 31, 31, 0.12);
@@ -28,7 +32,8 @@
      lower 3:1 large-text threshold as-is. */
   --mauve-text: #775A81;
   --slate-purple-text: #686077;
-  --mauve-deep: #876692; /* donate button bg — 4.83:1 with white text */
+  --coral-text: #b8502b;
+  --gold-text: #8c6319;
 
   /* Type */
   --font-serif: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
@@ -160,16 +165,11 @@ p { margin: 0 0 var(--space-sm); }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
-/* Donate: deliberately higher contrast than the rest of the palette — solid fill, unmistakable */
-.btn-donate {
-  background: var(--mauve-deep);
+.btn-coral {
+  background: var(--coral);
   color: var(--white);
-  box-shadow: var(--shadow-soft);
-  font-size: 1.05rem;
-  padding: 1rem 2rem;
 }
-.btn-donate:hover { background: #8a67a0; color: var(--white); }
-.btn-donate--nav { padding: 0.65rem 1.35rem; font-size: 0.95rem; }
+.btn-coral:hover { background: var(--coral-text); color: var(--white); }
 
 .btn-primary {
   background: var(--teal);
@@ -314,7 +314,6 @@ p { margin: 0 0 var(--space-sm); }
   }
   .nav-links.is-open { transform: translateX(0); }
   .nav-links a { font-size: 1.2rem; }
-  .nav-actions .btn-donate { padding: 0.7rem 1.3rem; font-size: 0.9rem; }
 
   .nav-dropdown {
     position: static;
@@ -603,113 +602,44 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--slate-purple-text);
   font-weight: 600;
   font-size: 0.92rem;
+  text-decoration: none;
+  transition: opacity var(--transition);
 }
-.sponsor-logo .swatch {
-  width: 34px; height: 34px; border-radius: 8px;
-  background: repeating-linear-gradient(45deg, var(--border-soft), var(--border-soft) 4px, transparent 4px, transparent 8px);
-  border: 1px dashed var(--border-soft);
+.sponsor-logo:hover { opacity: 0.75; }
+.sponsor-logo-img {
+  height: 34px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
 }
 
-/* ---------- Get Involved / Donate ---------- */
-.give-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: start;
-}
-@media (max-width: 900px) { .give-panel { grid-template-columns: 1fr; } }
-
-.donate-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-soft);
-  padding: var(--space-lg);
-}
-.donate-card--compact {
-  box-shadow: none;
-  padding: var(--space-md);
-}
-.donate-card--compact h3 { font-size: 1.1rem; }
-.give-toggle {
+/* ---------- Video placeholder (gold accent — media coming soon) ---------- */
+.video-placeholder {
   display: flex;
-  background: var(--mint-tint);
-  border-radius: 999px;
-  padding: 4px;
-  margin-bottom: var(--space-md);
-}
-.give-toggle button {
-  flex: 1;
-  border: none;
-  background: none;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
-  color: var(--teal-dark);
-  font-size: 0.95rem;
-}
-.give-toggle button.is-active { background: var(--teal); color: var(--white); }
-
-.amount-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
-  margin-bottom: var(--space-sm);
-}
-@media (max-width: 420px) { .amount-grid { grid-template-columns: repeat(2, 1fr); } }
-.amount-btn {
-  border: 2px solid var(--border-soft);
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 0.5rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 1.05rem;
-  color: var(--teal);
-  min-height: 48px;
-}
-.amount-btn.is-active { border-color: var(--mauve); background: var(--mauve-tint); }
-.impact-note {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  background: var(--cream);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem 1rem;
-  margin-bottom: var(--space-md);
-  min-height: 3.2em;
-}
-
-.form-field { margin-bottom: var(--space-sm); }
-.form-field label {
-  display: block;
-  font-weight: 700;
-  font-size: 0.92rem;
-  margin-bottom: 0.3rem;
-  color: var(--ink);
-}
-.form-field input, .form-field select {
-  width: 100%;
+  align-items: center;
+  gap: 0.7em;
+  background: var(--gold-tint);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 0.85rem 1rem;
-  border: 2px solid var(--border-soft);
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  font-family: var(--font-sans);
-  min-height: 48px;
+  margin-top: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--gold-text);
 }
-.form-field input:focus, .form-field select:focus {
-  border-color: var(--teal);
-  outline: none;
-}
+.video-placeholder .vp-icon { font-size: 1.2rem; flex-shrink: 0; }
 
-.give-primary {
-  background: var(--cream);
+/* ---------- Join the Conversation (coral accent — community of practice) ---------- */
+.cop-panel {
+  background: var(--coral-tint);
   border-radius: var(--radius);
   padding: var(--space-lg);
-  height: 100%;
-  box-shadow: var(--shadow-soft);
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
-.give-primary h3 { color: var(--teal); font-size: 1.4rem; }
+.cop-panel .section-eyebrow { color: var(--coral-text); }
+.cop-panel p { color: var(--ink-soft); }
+.cop-note { font-size: 0.85rem; color: var(--slate-purple-text); margin-top: var(--space-sm); }
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -748,41 +678,6 @@ p { margin: 0 0 var(--space-sm); }
   gap: var(--space-sm);
   color: rgba(255,255,255,0.6);
 }
-
-/* ---------- Timeline (homepage) ---------- */
-.timeline {
-  position: relative;
-  margin-top: var(--space-lg);
-  padding-left: 2rem;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.55rem; top: 0.4rem; bottom: 0.4rem;
-  width: 3px;
-  background: linear-gradient(var(--mint), var(--teal), var(--mauve));
-  border-radius: 3px;
-}
-.timeline-item {
-  position: relative;
-  padding-bottom: var(--space-lg);
-}
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -2rem;
-  top: 0.3rem;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--teal);
-  border: 3px solid var(--white);
-  box-shadow: 0 0 0 2px var(--teal);
-}
-.timeline-item.is-future::before { background: var(--white); box-shadow: 0 0 0 2px var(--mauve); }
-.timeline-item .tl-year { color: var(--mauve-text); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.04em; }
-.timeline-item h4 { margin: 0.15rem 0 0.4rem; color: var(--teal); }
-.timeline-item.is-future h4 { color: var(--slate-purple-text); }
 
 /* ---------- Ripple / systems story (homepage) ---------- */
 .ripple-flow {
@@ -824,26 +719,6 @@ p { margin: 0 0 var(--space-sm); }
   .ripple-arrow { transform: rotate(90deg); padding: 0.2rem 0; }
 }
 
-/* ---------- Research teaser (homepage) ---------- */
-.research-teaser-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-sm);
-  margin: var(--space-lg) 0;
-}
-@media (max-width: 900px) { .research-teaser-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .research-teaser-grid { grid-template-columns: 1fr; } }
-.teaser-tile {
-  background: var(--white);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-sm);
-  padding: var(--space-sm);
-  text-align: center;
-  font-weight: 700;
-  color: var(--teal);
-  font-size: 0.92rem;
-}
-
 /* ---------- Utility ---------- */
 .text-center { text-align: center; }
 .mt-0 { margin-top: 0; }
@@ -859,6 +734,8 @@ p { margin: 0 0 var(--space-sm); }
   margin: 0 0.3rem 0.3rem 0;
 }
 .tag--mauve { background: var(--mauve-tint); color: var(--mauve-text); }
+.tag--gold { background: var(--gold-tint); color: var(--gold-text); }
+.tag--coral { background: var(--coral-tint); color: var(--coral-text); }
 
 .back-to-top {
   display: inline-flex;

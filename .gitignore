@@ -1,5 +1,7 @@
 .DS_Store
 *.docx
+.claude/settings.local.json
+.playwright-mcp/
 /Diversiy EC Leadership (2).pdf
 /EYLDI Clean draft 7.5.26.pdf
 /EYLDI-paper-summer2026_Jul24.pdf
