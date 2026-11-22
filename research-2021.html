@@ -3,15 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2021 Research — EYLDI</title>
-<meta name="description" content="EYLDI's 2021 founding study — a national survey of ECE professionals that identified the gap in developmental relationships later explored in the 2024 research.">
+<title>2021 Research | EYLDI</title>
+<meta name="description" content="EYLDI's 2021 founding study, a national survey of ECE professionals that identified the gap in developmental relationships later explored in EYLDI's latest research.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/research.css">
+<script>
+  (function () {
+    var r = document.documentElement;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    r.classList.add('js');
+    // failsafe: if the reveal script never runs, show everything
+    setTimeout(function () { if (!window.__revealReady) r.classList.remove('js'); }, 4000);
+  })();
+</script>
 </head>
-<body>
+<body data-theme="2021">
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-header">
@@ -28,14 +37,16 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="nav-item--dropdown">
-        <a href="index.html#competencies">The 2024 Research</a>
+        <a href="latest-research.html">The Latest Research</a>
         <ul class="nav-dropdown">
-          <li><a href="index.html#competencies">The Five Competencies</a></li>
-          <li><a href="index.html#troubleshooting">Troubleshooting</a></li>
-          <li><a href="index.html#quotes">Quote Bank</a></li>
+          <li><a href="latest-research.html#competencies">What Works: Five Competencies</a></li>
+          <li><a href="competency-dictionary.html">Competency Dictionary</a></li>
+          <li><a href="methodology.html">Methodology</a></li>
+          <li><a href="latest-research.html#common-challenges">Common Challenges</a></li>
+          <li><a href="assets/EYLDI-Leaders-Developing-Leaders-2026.pdf" download>Download the Report (PDF)</a></li>
         </ul>
       </li>
-      <li><a href="research-2021.html" class="is-active">2021 Research</a></li>
+      <li><a href="research-2021.html">2021 Research</a></li>
       <li><a href="about.html">About EYLDI</a></li>
     </ul>
   </nav>
@@ -46,9 +57,9 @@
   <!-- ===================== HUB HERO ===================== -->
   <section class="hub-hero">
     <div class="container">
-      <p class="section-eyebrow">Context for the 2024 Study</p>
+      <p class="section-eyebrow">Context for the Latest Research</p>
       <h1>2021 Research: The Study That Shaped This Work</h1>
-      <p class="lede" style="max-width: 62ch;">Before EYLDI studied what effective leadership development looks like, it asked a simpler question: do ECE leaders have access to it at all? This 2021 study — EYLDI's founding research — found that they largely didn't, especially leaders from marginalized backgrounds. That gap is what the 2024 research set out to understand and address.</p>
+      <p class="lede" style="max-width: 62ch;">Before EYLDI studied what effective leadership development looks like, it asked a simpler question: do ECE leaders have access to it at all? This 2021 study, EYLDI's founding research, found that they largely didn't, especially leaders from marginalized backgrounds. That gap is what the latest research set out to understand and address.</p>
       <div class="method-strip" style="justify-content:flex-start;">
         <span class="method-chip">~500 ECE professionals surveyed</span>
         <span class="method-chip">457 responses analyzed</span>
@@ -63,14 +74,14 @@
     <div class="container">
       <div class="section-head section-head--center">
         <p class="section-eyebrow">What the 2021 Study Found</p>
-        <h2>Leadership quality shapes everything else in this sector — but who leads doesn't match who's served</h2>
+        <h2>Leadership quality shapes everything else in this sector, but who leads doesn't match who's served</h2>
       </div>
 
       <div class="grid-2" style="margin-bottom: var(--space-xl);">
         <div class="card">
           <h3>Who leads doesn't match who's served</h3>
-          <p>Nationally, about <strong>50% of children under age 5</strong> in the U.S. are children of color — yet roughly <strong>79% of U.S. early childhood center directors are white</strong>, and only 21% are Black, Indigenous, or people of color.</p>
-          <p class="visually-muted" style="font-size:0.85rem;">Sources: 2016 Early Childhood Workforce Index; CSCCE, UC Berkeley; Annie E. Casey Foundation Kids Count; McCormick Center, 2018 — as cited in EYLDI's 2021 report.</p>
+          <p>Nationally, about <strong>50% of children under age 5</strong> in the U.S. are children of color, yet roughly <strong>79% of U.S. early childhood center directors are white</strong>, and only 21% are Black, Indigenous, or people of color.</p>
+          <p class="visually-muted" style="font-size:0.85rem;">Sources: 2016 Early Childhood Workforce Index; CSCCE, UC Berkeley; Annie E. Casey Foundation Kids Count; McCormick Center, 2018, as cited in EYLDI's 2021 report.</p>
         </div>
         <div class="card">
           <h3>The sector already agreed this mattered</h3>
@@ -82,13 +93,13 @@
       <div class="era-compare" style="grid-template-columns: 1fr;">
         <div class="era-card era-card--2021">
           <h4>2021 · Diversify Early Childhood Leadership</h4>
-          <p class="visually-muted" style="font-size:0.9rem;">EYLDI's founding study — a national survey asking what's holding ECE leaders back.</p>
+          <p class="visually-muted" style="font-size:0.9rem;">EYLDI's founding study: a national survey asking what's holding ECE leaders back.</p>
           <ul>
             <li>~500 ECE professionals surveyed (457 analyzed)</li>
             <li>27 companion interviews</li>
             <li>82% endorsed advancing leaders from marginalized backgrounds</li>
             <li>71% said the sector has too few leaders with diverse backgrounds</li>
-            <li>Key finding: leaders — especially from marginalized backgrounds — lacked access to developmental relationships with more experienced leaders</li>
+            <li>Key finding: leaders, especially from marginalized backgrounds, lacked access to developmental relationships with more experienced leaders</li>
           </ul>
           <a class="btn btn-secondary" href="assets/EYLDI-2021-Diversify-Early-Childhood-Leadership.pdf" download>Download the 2021 Report (PDF) →</a>
         </div>
@@ -107,12 +118,12 @@
         <div class="quote-card">
           <span class="quote-tag">2021 Origins</span>
           <blockquote>&ldquo;It matters that we have leaders from the community that are going to change and make things better for that community... it's an equity gap. Not an achievement gap, an ability gap.&rdquo;</blockquote>
-          <cite style="font-size:0.85rem; color: var(--slate-purple-text);">— ECE State Nonprofit Leader, 2021 study</cite>
+          <cite style="font-size:0.85rem; color: var(--slate-purple-text);">ECE State Nonprofit Leader, 2021 study</cite>
         </div>
         <div class="quote-card">
           <span class="quote-tag">2021 Origins</span>
           <blockquote>&ldquo;There's no coaching that goes along with figuring out what to do next. How do I get ahead? How do I become a better teacher?... That just doesn't exist in the sector right now.&rdquo;</blockquote>
-          <cite style="font-size:0.85rem; color: var(--slate-purple-text);">— Consultant and Trainer, 2021 study</cite>
+          <cite style="font-size:0.85rem; color: var(--slate-purple-text);">Consultant and Trainer, 2021 study</cite>
         </div>
       </div>
     </div>
@@ -137,7 +148,8 @@
   </section>
 
   <div class="section text-center" style="padding-top:0;">
-    <a class="btn btn-primary" href="index.html#competencies">See How This Shaped the 2024 Research →</a>
+    <a class="btn btn-primary" href="latest-research.html#competencies">See How This Shaped the Latest Research →</a>
+    <a class="btn btn-secondary" href="assets/EYLDI-Leaders-Developing-Leaders-2026.pdf" download><svg class="icon icon--dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19h14"/></svg> Download the Latest Report (PDF)</a>
   </div>
 
 </main>
@@ -147,19 +159,22 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">EYLDI</div>
-        <p style="max-width: 34ch;">This site is the home of EYLDI's 2024 research on how ECE leaders develop other leaders.</p>
+        <p style="max-width: 34ch;">This site is the home of EYLDI's latest research on how ECE leaders develop other leaders.</p>
         <p>Contact: <a href="mailto:eyldinitiative@gmail.com">eyldinitiative@gmail.com</a></p>
       </div>
       <div>
         <h4>Site</h4>
-        <p><a href="index.html#competencies">The Five Competencies</a></p>
-        <p><a href="index.html#troubleshooting">Troubleshooting</a></p>
+        <p><a href="latest-research.html">The Latest Research</a></p>
+        <p><a href="competency-dictionary.html">Competency Dictionary</a></p>
+        <p><a href="methodology.html">Methodology</a></p>
+        <p><a href="latest-research.html#common-challenges">Common Challenges</a></p>
         <p><a href="research-2021.html">2021 Research</a></p>
         <p><a href="about.html">About EYLDI</a></p>
+        <p><a href="assets/EYLDI-Leaders-Developing-Leaders-2026.pdf" download>Download the Report (PDF)</a></p>
       </div>
       <div>
         <h4>Citation</h4>
-        <p class="footer-citation">Early Years Leadership Diversity Initiative. (2025/26). <em>Leaders Developing Leaders.</em> Full report publishing soon.</p>
+        <p class="footer-citation">Early Years Leadership Diversity Initiative. (2026). <em>Leaders Developing Leaders.</em> <a href="assets/EYLDI-Leaders-Developing-Leaders-2026.pdf" download>Download (PDF) &darr;</a></p>
         <p class="footer-citation">Early Years Leadership Diversity Initiative. (2021). <em>Diversify Early Childhood Leadership.</em> <a href="assets/EYLDI-2021-Diversify-Early-Childhood-Leadership.pdf" download>(PDF)</a></p>
       </div>
     </div>

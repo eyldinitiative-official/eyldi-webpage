@@ -2,15 +2,6 @@
    EYLDI — Research Hub styles (extends styles.css)
    ========================================================================== */
 
-.hub-hero {
-  background: linear-gradient(180deg, var(--teal) 0%, var(--teal-dark) 100%);
-  color: var(--white);
-  padding: var(--space-xl) 0 var(--space-lg);
-}
-.hub-hero h1 { color: var(--white); }
-.hub-hero .lede { color: rgba(255,255,255,0.88); }
-.hub-hero .section-eyebrow { color: rgba(255,255,255,0.9); }
-
 /* ---------------- Competency Explorer ---------------- */
 .comp-cluster-label {
   text-align: center;
@@ -183,28 +174,12 @@
 }
 .accordion-stat { display: inline-block; background: var(--mauve-tint); color: var(--mauve-text); font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin-bottom: 0.5rem; }
 
-/* ---------------- Quote bank ---------------- */
-.quote-bank-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-}
+/* ---------------- Quote cards (2021 page) ---------------- */
+.quote-bank-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
 @media (max-width: 760px) { .quote-bank-grid { grid-template-columns: 1fr; } }
-.quote-card {
-  background: var(--white);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: var(--space-md);
-  transition: opacity var(--transition), transform var(--transition);
-}
-.quote-card blockquote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--teal);
-  margin: 0 0 0.6rem;
-  font-size: 1.05rem;
-}
-.quote-card .quote-tag { font-size: 0.78rem; color: var(--mauve-text); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.quote-card { background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: var(--space-md); }
+.quote-card blockquote { font-family: var(--font-serif); font-style: italic; color: var(--t-dark); margin: 0 0 0.6rem; font-size: 1.05rem; }
+.quote-card .quote-tag { font-size: 0.78rem; color: var(--t-eyebrow); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* ---------------- Methodology callout ---------------- */
 .method-strip {
@@ -223,3 +198,127 @@
   font-weight: 600;
   color: var(--teal-dark);
 }
+
+/* ---------------- Home: link to dictionary under competency intro ---------------- */
+.comp-dict-link { margin-top: var(--space-sm); }
+.section-head .lede + .lede { margin-top: var(--space-sm); }
+
+/* ---------------- Methodology: 5-step overview (home) ---------------- */
+.method-steps {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+@media (max-width: 900px) { .method-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .method-steps { grid-template-columns: 1fr; } }
+.method-step {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+.method-step h3 { margin: 0.4rem 0 0.3rem; color: var(--teal); font-size: 1.25rem; }
+.method-step p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+.method-step-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--t-dark); color: var(--white);
+  font-family: var(--font-serif); font-weight: 700; flex: none;
+}
+
+/* ---------------- Methodology page ---------------- */
+.fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+@media (max-width: 900px) { .fact-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .fact-grid { grid-template-columns: 1fr; } }
+.fact h3 { color: var(--teal); margin-top: 0; font-size: 1.2rem; }
+.fact p { margin-bottom: 0; }
+
+.method-detail { list-style: none; padding: 0; margin: 0 auto; max-width: 820px; }
+.method-block {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-sm);
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+.method-block h3 { margin-top: 0.15rem; color: var(--teal); }
+.method-block ul { padding-left: 1.1em; }
+.method-block li { margin-bottom: 0.3rem; }
+
+.glossary { max-width: 820px; margin: 0 auto; display: grid; gap: 0.8rem; }
+.glossary > div {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  gap: var(--space-sm);
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+@media (max-width: 600px) { .glossary > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+.glossary dt { font-weight: 700; color: var(--teal); }
+.glossary dd { margin: 0; color: var(--ink-soft); }
+
+/* ---------------- Competency Dictionary page ---------------- */
+.dict-abbr {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--teal); color: var(--white);
+  font-family: var(--font-serif); font-weight: 700; flex: none;
+}
+.dict-abbr--uo, .dict-abbr--br, .dict-abbr--hi { background: var(--mauve); }
+.dict-abbr--eo { background: var(--slate-purple); }
+.dict-abbr--mp { background: var(--gold); }
+
+.dict-container { max-width: 860px; }
+.dict-comp { scroll-margin-top: 80px; }
+.dict-comp-head { display: flex; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-sm); }
+.dict-comp-head .section-eyebrow { margin: 0; }
+.dict-comp-head h2 { margin: 0; }
+.dict-lede { font-size: 1.1rem; }
+.dict-key { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin: var(--space-sm) 0; }
+.dict-key-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate-purple-text); }
+.dict-key .method-chip { padding: 0.35rem 0.9rem; }
+
+.dict-level-label {
+  display: inline-block;
+  background: var(--mauve-tint); color: var(--mauve-text);
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.2rem 0.7rem; border-radius: 999px;
+}
+.dict-level-label--missed { background: var(--coral-tint); color: var(--coral-text); }
+.dict-missed, .dict-level {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+.dict-missed { border-left: 4px solid var(--coral); }
+.dict-level { border-left: 4px solid var(--mint); }
+.dict-missed h3, .dict-level h3 { margin: 0.5rem 0 0.4rem; color: var(--teal); font-size: 1.2rem; }
+.dict-missed ul, .dict-level ul { padding-left: 1.1em; margin: 0 0 0.5rem; }
+.dict-missed li, .dict-level li { margin-bottom: 0.3rem; }
+.dict-levels { list-style: none; padding: 0; margin: 0; }
+.dict-levels-intro { font-weight: 700; margin: var(--space-md) 0 var(--space-sm); color: var(--ink-soft); }
+.dict-pending { color: var(--ink-soft); font-style: italic; }
+.dict-quote {
+  background: var(--cream);
+  border-left: 4px solid var(--mauve);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-sm) 0 0;
+}
+.dict-quote p { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 1.08rem; color: var(--teal); }
+.dict-quote .dict-context { font-family: var(--font-sans); font-style: normal; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
+.dict-quote cite { display: block; font-style: normal; font-size: 0.78rem; font-weight: 600; color: var(--slate-purple-text); margin-top: 0.4rem; }
+.dict-back { margin: var(--space-sm) 0 0; font-size: 0.9rem; }
+
+.hero-terms { margin: var(--space-sm) 0 0; font-size: 0.92rem; }
+
+.source-list { max-width: 760px; margin: 0 auto var(--space-sm); padding-left: 1.2em; color: var(--ink-soft); }
+.source-list li { margin-bottom: 0.6rem; }
